@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
-public class CourseRequestToUpdate {
+public class CourseDto {
     @NotBlank(message = "Course author has to be filled")
     private String author;
     @NotBlank(message = "Course title has to be filled")

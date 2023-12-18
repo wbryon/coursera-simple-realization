@@ -1,15 +1,14 @@
 package com.example.demo.course.service;
 
-import com.example.demo.course.dto.CourseRequestToCreate;
-import com.example.demo.course.dto.CourseRequestToUpdate;
+import com.example.demo.course.dto.CourseDto;
 import com.example.demo.course.model.Course;
 
 import java.util.List;
 
 public interface CourseService {
-    Course createCourse(CourseRequestToCreate request);
+    Course createCourse(CourseDto request);
 
-    void updateCourse(Long id, CourseRequestToUpdate request);
+    void updateCourse(Long id, CourseDto request);
 
     void deleteCourse(Long id);
 

@@ -11,23 +11,35 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
-public class HandleErrorService {
+public class ErrorHandler {
 
     @ExceptionHandler
-    public ResponseEntity<ApiError> noSuchElementExceptionHandler(NoSuchElementException ex) {
+    public ResponseEntity<ErrorResponse> noSuchElementExceptionHandler(NoSuchElementException ex) {
         return new ResponseEntity<>(
-                new ApiError(ex.getMessage()),
+                new ErrorResponse(ex.getMessage()),
                 HttpStatus.NOT_FOUND
         );
     }
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ApiError handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
+    public ErrorResponse handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         FieldError error = e.getFieldError();
         if (error == null)
-            return new ApiError(e.getMessage());
+            return new ErrorResponse(e.getMessage());
         else
-            return new ApiError(error.getDefaultMessage());
+            return new ErrorResponse(error.getDefaultMessage());
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleNotFoundException(NotFoundException e) {
+        return new ErrorResponse(e.getMessage());
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ErrorResponse handleAll(Throwable e) {
+        return new ErrorResponse(e.getMessage());
     }
 }
