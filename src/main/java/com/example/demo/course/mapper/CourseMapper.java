@@ -1,7 +1,7 @@
 package com.example.demo.course.mapper;
 
 import com.example.demo.course.dto.CourseDto;
-import com.example.demo.course.model.Course;
+import com.example.demo.course.entity.Course;
 
 public class CourseMapper {
     public static CourseDto toCourseRequestToUpdate(Course course) {

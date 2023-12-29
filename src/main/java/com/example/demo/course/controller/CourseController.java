@@ -3,7 +3,7 @@ package com.example.demo.course.controller;
 import com.example.demo.course.dto.CourseDto;
 import com.example.demo.course.dto.CourseNotFoundDto;
 import com.example.demo.course.exception.NotFoundException;
-import com.example.demo.course.model.Course;
+import com.example.demo.course.entity.Course;
 import com.example.demo.course.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

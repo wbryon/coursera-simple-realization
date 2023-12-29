@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: '3'
+      author: 'wbryon'
+      changes:
+        - createTable:
+            tableName: 'users'
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: user_id_pk
+              - column:
+                  name: username
+                  type: varchar(255)

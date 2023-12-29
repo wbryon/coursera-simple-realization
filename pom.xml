@@ -73,6 +73,19 @@
 			<artifactId>hibernate-core</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.github.gavlyukovskiy/datasource-proxy-spring-boot-starter -->
+		<dependency>
+			<groupId>com.github.gavlyukovskiy</groupId>
+			<artifactId>datasource-proxy-spring-boot-starter</artifactId>
+			<version>1.9.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>

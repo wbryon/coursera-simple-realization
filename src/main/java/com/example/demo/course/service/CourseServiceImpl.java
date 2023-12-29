@@ -2,7 +2,7 @@ package com.example.demo.course.service;
 
 import com.example.demo.course.dto.CourseDto;
 import com.example.demo.course.exception.NotFoundException;
-import com.example.demo.course.model.Course;
+import com.example.demo.course.entity.Course;
 import com.example.demo.course.repository.CourseRepository;
 import org.springframework.stereotype.Service;
 
