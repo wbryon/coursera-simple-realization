@@ -1,4 +1,4 @@
-package com.example.demo.user;
+package com.example.demo.user.entity;
 
 import com.example.demo.course.entity.Course;
 import lombok.Getter;
@@ -22,8 +22,8 @@ public class User {
     @Column
     private String username;
 
-//    @ManyToMany(mappedBy = "users")
-//    private Set<Course> courses;
+    @ManyToMany(mappedBy = "users")
+    private Set<Course> courses;
 
     public User(String username) {
         this.username = username;
